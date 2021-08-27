@@ -1,11 +1,15 @@
 package com.niceTek.server.model.RH;
 
 import com.niceTek.server.model.Role;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 
 import javax.persistence.*;
 import java.io.Serializable;
 @MappedSuperclass
+
+@NoArgsConstructor
 public class User implements Serializable {
 
     @Id
@@ -17,4 +21,12 @@ public class User implements Serializable {
     protected String password;
     protected Role role;
 
+
+    public User(String firstName, String lastName, String username, String password, Role role) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+    }
 }
