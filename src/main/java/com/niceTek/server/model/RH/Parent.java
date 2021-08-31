@@ -1,12 +1,10 @@
 package com.niceTek.server.model.RH;
 
 import com.niceTek.server.model.Role;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -17,7 +15,11 @@ public class Parent extends User {
         super(firstName, lastName, username, password, role);
     }
 
-    @OneToMany(mappedBy = "parent")
+    @OneToMany(mappedBy = "parent",fetch = FetchType.EAGER)
     private List<Student> students;
+
+
+
+
 
 }

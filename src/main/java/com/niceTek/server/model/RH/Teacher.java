@@ -2,12 +2,10 @@ package com.niceTek.server.model.RH;
 
 import com.niceTek.server.model.Role;
 import com.niceTek.server.model.Sys.Class;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import java.util.List;
 
 @Entity
@@ -18,6 +16,6 @@ public class Teacher extends User {
         super(firstName, lastName, username, password, role);
     }
 
-    @OneToMany(mappedBy = "teacher")
+    @ManyToMany
     private List<Class>classes;
 }

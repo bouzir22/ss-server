@@ -2,15 +2,16 @@ package com.niceTek.server.model.RH;
 
 import com.niceTek.server.model.Role;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
 import javax.persistence.*;
 import java.io.Serializable;
 @MappedSuperclass
-
 @NoArgsConstructor
-public class User implements Serializable {
+@Data
+public  class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,4 +30,7 @@ public class User implements Serializable {
         this.password = password;
         this.role = role;
     }
+
+
+
 }

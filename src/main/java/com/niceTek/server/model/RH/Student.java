@@ -1,5 +1,6 @@
 package com.niceTek.server.model.RH;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.niceTek.server.model.Role;
 import com.niceTek.server.model.Sys.Class;
 import lombok.AllArgsConstructor;
@@ -20,6 +21,7 @@ public class Student extends User {
     }
 
     @ManyToOne
+    @JsonIgnore
     private Parent parent;
     @ManyToOne
     private Class stClass;

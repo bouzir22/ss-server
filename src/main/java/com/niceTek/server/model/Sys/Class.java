@@ -3,12 +3,14 @@ package com.niceTek.server.model.Sys;
 import com.niceTek.server.model.RH.Student;
 import com.niceTek.server.model.RH.Teacher;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Data
 @NoArgsConstructor
 public class Class {
     public Class(String name, String level) {
@@ -21,8 +23,10 @@ public class Class {
     private Long id;
     String name;
     String level;
-    @ManyToOne
-    private Teacher teacher;
+    @ManyToMany
+    private List<Teacher> teachers;
     @OneToMany(mappedBy = "stClass")
     private List<Student> students;
+    @OneToMany(mappedBy = "aClass")
+    private  List<class_course> class_courses;
 }
