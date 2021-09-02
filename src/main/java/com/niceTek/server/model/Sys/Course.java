@@ -13,7 +13,7 @@ public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    String name;
+    private String name;
 
     public Course(String name) {
         this.name = name;

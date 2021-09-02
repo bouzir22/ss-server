@@ -10,7 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-@Component
+import java.util.ArrayList;
+import java.util.List;
+
+/*@Component*/
 public class Populator implements CommandLineRunner {
 
     @Autowired
@@ -69,22 +72,17 @@ Parent imed= new Parent("hamed","hamed","hamed50","password", Role.PARENT);
 /**asso object*/
 
 
+/**dbInvoker
 
-/**DBInvoker****
 parentRepo.save(hamed);parentRepo.save(imed);
 amir.setParent(imed);imen.setParent(hamed);med.setParent(hamed);
 
 studentRepo.save(amir);studentRepo.save(med); studentRepo.save(imen);
 teacherRepo.save(emna);teacherRepo.save(emina);teacherRepo.save(abir);teacherRepo.save(salma);
-List <Teacher>tempa =new ArrayList();tempa.add(abir);tempa.add(salma);
-        List <Teacher>tempb =new ArrayList();tempa.add(abir);tempa.add(emna);
-classA.setTeachers(tempa);classB.setTeachers(tempb);
-
-
-
-
-
-        classRepo.save(classA);classRepo.save(classB);
+List<Teacher> tempa =new ArrayList();tempa.add(abir);tempa.add(salma);
+ List <Teacher>tempb =new ArrayList();tempa.add(abir);tempa.add(emna);
+//classA.setTeachers(tempa);classB.setTeachers(tempb);
+ classRepo.save(classA);classRepo.save(classB);
         courseRepo.save(arabic);courseRepo.save(art);courseRepo.save(coloring);courseRepo.save(drawing);
 
 
@@ -108,9 +106,8 @@ classA.setTeachers(tempa);classB.setTeachers(tempb);
 activityRepo.save(activity1);activityRepo.save(activity2);activityRepo.save(activity3);
 
 
+*/
 
-
- */
 
 
 

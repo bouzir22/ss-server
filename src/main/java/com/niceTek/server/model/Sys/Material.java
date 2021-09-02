@@ -1,5 +1,6 @@
 package com.niceTek.server.model.Sys;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -17,5 +18,6 @@ private String name;
     }
 
     @ManyToOne
+    @JsonIgnore
     private Course course;
 }
